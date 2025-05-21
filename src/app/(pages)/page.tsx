@@ -1,22 +1,35 @@
-import Image from 'next/image';
-import Skyline from "../../assets/cars/skyline.png"
+"use client"
+import { useState } from "react";
 
 export default function Home() {
+    const [images, setImages] = useState([]);
+
+    const handleChangeImage = (e) => {
+        const files = Array.from(e.target.files);
+        const newImages = files.map(file => ({
+            file, 
+            url: URL.createObjectURL(file),
+        }));
+        setImages(newImages);
+    }   
+
     return (
         <div>
-            <Image
-                src="https://www.wsupercars.com/wallpapers-regular/Rimac/2024-Rimac-Nevera-15th-Anniversary-001-1080.jpg"
-                alt="Cat"
-                width={500}
-                height={300}
+            <input
+                type="file"
+                multiple
+                accept='image/'
+                className='my-5'
+                onChange={handleChangeImage}
             />
 
-            <Image
-                src={Skyline}
-                alt="Cat"
-                width={500}
-                height={300}
-            />
+            {
+                images.map((image, index) => (
+                    <div key={index}>
+                        <img src={image.url} alt="image" />
+                    </div>
+                ))
+            }
         </div>
     );
 }
