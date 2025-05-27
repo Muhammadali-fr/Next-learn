@@ -7,9 +7,8 @@ export default function RootLayout(
   ) {
     return (
       <html lang="en">
-        <body style={{ display: 'flex' }}>
-            <h1>header</h1>
-          <main style={{ padding: '20px', flex: 1 }}>
+        <body>
+          <main>
             {children}
           </main>
         </body>

@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+.my-swiper-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+}
+
+.mySwiper {
+  border-radius: 8px;
+}
+
+.swiper-slide {
+  background-color: #4b4b4b;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
